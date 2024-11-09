@@ -13,6 +13,7 @@ Table of Contents
 - [Analysis and Design](#analysis-and-design)
 - [System Architecture](#system-architecture)
 - [Security](#security)
+- [Testing](#testing)
 - [Setup and Deployment](#setup-and-deployment-steps)
 
 ## Project Structure
@@ -35,7 +36,7 @@ Table of Contents
 - **View Game List**: Users can view a list of all games in the catalog.
 - **User Authentication**: Users must log in to access the application.
 - **Permissions**: Only authorized users can add, edit, or delete games (Admins and managers).
-- **Security**: Implement proper authentication and authorization mechanisms (CSRF tokens, loggin authentication).
+- **Security**: Implemented proper authentication and authorization mechanisms (CSRF tokens, loggin authentication).
 - **Usability**: UI intuitive and easy to navigate, designed for staff memebers with non technical backround.
   
 
@@ -44,7 +45,8 @@ Table of Contents
 
 ### System Architecture
 
-![image](https://github.com/user-attachments/assets/496a4afa-7767-429f-871e-cc012faa441a)
+![image](https://github.com/user-attachments/assets/9d3de266-75fe-41f7-a89f-6c847b73d8c6)
+
 
 The architecture is composed by these following:
 
@@ -91,6 +93,15 @@ The Django WebApp project includes several security measures to ensure reliabilt
 
 All this securuty measures were applied following best practices and ensure user validation, access, and a robust functionality of the web application.
 
+## Testing
+
+The project incorporates a test suite in tests.py to ensure stability and correctness of core functionalities in models, forms, and views:
+
+- **Model Tests**: Verify that models like `Genre` and `VideoGame` can be created, stored, and retrieved accurately. These tests ensure that data attributes such as titles, release dates, and associations between models are properly handled.
+
+- **Form Tests**: Validate that forms accept valid data and reject invalid submissions. For example, the `VideogameForm` is tested to confirm it only allows submissions that meet specified field requirements.
+
+- **View Tests**: Ensure that views load the correct templates, return expected HTTP status codes, and display the right content. Views are tested for their response to user actions, with checks for the proper template usage and access control.
 
 
 ## Setup and Deployment Steps
@@ -109,7 +120,7 @@ This section shows the steps to set up, test, and deploy the application into a 
 ### 2. Running Tests
    - To guarantee that the application works as expected, run tests defined in `tests.py`. The tests are written to ensure correct setup, catalog visualisation, form submission, videogame creation.
    - To run all the tests, run the command:
-     ```bash
+     ```
      python manage.py test
      ```
    - Check the output to see if all the tests passed.
@@ -117,14 +128,14 @@ This section shows the steps to set up, test, and deploy the application into a 
 ### 3. Using Waitress for Deployment
    - For production deployment, we are using Waitress, a WSGI server that is recommended for Windows.
    - First, install Waitress if you haven’t already, just run:
-     ```bash
+     ```
      pip install waitress
      ```
 
 ### 4. Running the Server with Waitress
    - Then, create a new file `run_waitress_server.py` to be able to run the server. Here is an example of how the code might look, just adjust the host and port accordingly:
      
-     ```python
+     ```
      # run_waitress_server.py
      from waitress import serve
      from my_project.wsgi import application
@@ -133,7 +144,7 @@ This section shows the steps to set up, test, and deploy the application into a 
          serve(application, host="0.0.0.0", port=8000)
      ```
    - Run `run_waitress_server.py` using:
-     ```bash
+     ```
      python run_waitress_server.py
      ```
    - This will start the application on `http://0.0.0.0:8000`, or the specific IP address of your local machine, making it accessible on the local network.
@@ -147,20 +158,24 @@ In order to hash the sensitive data for connecting to our database, environmenta
 
 To install just run:
 
-```bash
+```
 pip install django-environ
 ```
 
 After that, create an env. file with the credentials to connect to the database, somehting like this:
 
-`DB_NAME=your_database_name
+```
+DB_NAME=your_database_name
 DB_USER=your_database_user
 DB_PASSWORD=your_database_password
 DB_HOST=your_database_host
-DB_PORT=your_database_port`
+DB_PORT=your_database_port
+```
+
 
 then update the settings.py to use the environmental variables, it might look like:
-`DATABASES = {
+```
+DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': env('DB_NAME'),
@@ -169,7 +184,8 @@ then update the settings.py to use the environmental variables, it might look li
         'HOST': env('DB_HOST', default='localhost'),  
         '    
     }
-}`
+}
+```
 
 Note: the credentials.env file was added to the gititgnore in this repository for obvious reasons, so the credentials are not visible for everyone.
 
