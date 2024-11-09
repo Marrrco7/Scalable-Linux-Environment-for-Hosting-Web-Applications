@@ -13,7 +13,7 @@ Table of Contents
 - [Analysis and Design](#analysis-and-design)
 - [System Architecture](#system-architecture)
 - [Security](#security)
-- [Setup and Deployment](#setup-and-deployment)
+- [Setup and Deployment](#setup-and-deployment-steps)
 
 ## Project Structure
 -----------------
