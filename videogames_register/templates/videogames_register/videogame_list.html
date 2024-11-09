@@ -1,0 +1,42 @@
+{% extends "videogames_register/base.html" %}
+
+
+{% block content %}
+<table class="table table-borderless">
+    <thead class="border-bottom font-weight-bold">
+        <tr>
+            <td>Title</td>
+            <td>Release Date</td>
+            <td>Genre</td>
+            <td>Description</td>
+            <td>
+                <a href="{% url 'videogame_insert' %}" class="btn btn-outline-success">
+                    <i class="fa-solid fa-gamepad"></i> Add New
+                </a>
+            </td>
+        </tr>
+    </thead>
+    <tbody>
+        {% for videogame in videogame_list %}
+            <tr>
+                <td>{{videogame.title}}</td>
+                <td>{{videogame.release_date}}</td>
+                <td>{{videogame.genre}}</td>
+                <td>{{videogame.description}}</td>
+                <td>
+                    <a href="{% url 'videogame_update' videogame.id %}" class="btn text-secondary px-0">
+                        <i class="fa-solid fa-pencil"></i>
+                    </a>
+                    <form action="{% url 'videogame_delete' videogame.id %}" method="post" class="d-inline">
+                        {% csrf_token %}
+                        <button type="submit" class="btn">
+                            <i class="fa-solid fa-trash"></i>
+                        </button>
+                    </form>
+                </td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+{% endblock content %}

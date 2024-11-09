@@ -1,0 +1,287 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="543ec0da-1819-4fe5-bd90-e3ffdb92fc1d" name="Changes" comment="Files added">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ChangesViewManager">
+    <option name="groupingKeys">
+      <option value="directory" />
+    </option>
+  </component>
+  <component name="DjangoConsoleOptions" custom-start-script="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)">
+    <option name="myCustomStartScript" value="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 5
+}</component>
+  <component name="ProjectId" id="2o1G30nmuihRguymAhaDkMdq1WZ" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;Django Server.Videogames_project.executor&quot;: &quot;Run&quot;,
+    &quot;Django tests.Test: videogames_register.tests.GenreModelTest.executor&quot;: &quot;Run&quot;,
+    &quot;Django tests.Test: videogames_register.tests.GenreModelTest.test_genre_creation.executor&quot;: &quot;Run&quot;,
+    &quot;Django tests.Test: videogames_register.tests.VideoGameModelTest.executor&quot;: &quot;Run&quot;,
+    &quot;Django tests.Test: videogames_register.tests.VideoGameModelTest.test_videogame_creation.executor&quot;: &quot;Run&quot;,
+    &quot;Django tests.Test: videogames_register.tests.VideogameFormTest.executor&quot;: &quot;Run&quot;,
+    &quot;Django tests.Test: videogames_register.tests.VideogameFormTest.test_invalid_form.executor&quot;: &quot;Run&quot;,
+    &quot;Django tests.Test: videogames_register.tests.VideogameFormTest.test_valid_form.executor&quot;: &quot;Run&quot;,
+    &quot;Django tests.Test: videogames_register.tests.VideogameFormViewTest.executor&quot;: &quot;Run&quot;,
+    &quot;Django tests.Test: videogames_register.tests.VideogameFormViewTest.test_videogame_view_form.executor&quot;: &quot;Run&quot;,
+    &quot;Django tests.Test: videogames_register.tests.VideogameListViewTest.executor&quot;: &quot;Run&quot;,
+    &quot;Django tests.Test: videogames_register.tests.VideogameListViewTest.test_videogame_list_view.executor&quot;: &quot;Run&quot;,
+    &quot;Django tests.Test: videogames_register.tests.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenDjangoStructureViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.pycharm.django.structure.promotion.once.per.project&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\marco\PycharmProjects\Videogames_project" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Django Server.Videogames_project">
+    <configuration name="Test: videogames_register.tests.VideogameFormTest.test_valid_form" type="DjangoTestsConfigurationType" temporary="true">
+      <module name="Videogames_project" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="TARGET" value="videogames_register.tests.VideogameFormTest.test_valid_form" />
+      <option name="SETTINGS_FILE" value="" />
+      <option name="CUSTOM_SETTINGS" value="false" />
+      <option name="USE_OPTIONS" value="false" />
+      <option name="OPTIONS" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Test: videogames_register.tests.VideogameFormViewTest" type="DjangoTestsConfigurationType" temporary="true">
+      <module name="Videogames_project" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="TARGET" value="videogames_register.tests.VideogameFormViewTest" />
+      <option name="SETTINGS_FILE" value="" />
+      <option name="CUSTOM_SETTINGS" value="false" />
+      <option name="USE_OPTIONS" value="false" />
+      <option name="OPTIONS" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Test: videogames_register.tests.VideogameFormViewTest.test_videogame_view_form" type="DjangoTestsConfigurationType" temporary="true">
+      <module name="Videogames_project" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="TARGET" value="videogames_register.tests.VideogameFormViewTest.test_videogame_view_form" />
+      <option name="SETTINGS_FILE" value="" />
+      <option name="CUSTOM_SETTINGS" value="false" />
+      <option name="USE_OPTIONS" value="false" />
+      <option name="OPTIONS" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Test: videogames_register.tests.VideogameListViewTest" type="DjangoTestsConfigurationType" temporary="true">
+      <module name="Videogames_project" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="TARGET" value="videogames_register.tests.VideogameListViewTest" />
+      <option name="SETTINGS_FILE" value="" />
+      <option name="CUSTOM_SETTINGS" value="false" />
+      <option name="USE_OPTIONS" value="false" />
+      <option name="OPTIONS" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Test: videogames_register.tests.VideogameListViewTest.test_videogame_list_view" type="DjangoTestsConfigurationType" temporary="true">
+      <module name="Videogames_project" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="TARGET" value="videogames_register.tests.VideogameListViewTest.test_videogame_list_view" />
+      <option name="SETTINGS_FILE" value="" />
+      <option name="CUSTOM_SETTINGS" value="false" />
+      <option name="USE_OPTIONS" value="false" />
+      <option name="OPTIONS" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Videogames_project" type="Python.DjangoServer" factoryName="Django server">
+      <module name="Videogames_project" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+        <env name="DJANGO_SETTINGS_MODULE" value="Videogames_project.settings" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="launchJavascriptDebuger" value="false" />
+      <option name="port" value="8000" />
+      <option name="host" value="localhost" />
+      <option name="additionalOptions" value="" />
+      <option name="browserUrl" value="" />
+      <option name="runTestServer" value="false" />
+      <option name="runNoReload" value="false" />
+      <option name="useCustomRunCommand" value="false" />
+      <option name="customRunCommand" value="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Django tests.Test: videogames_register.tests.VideogameFormViewTest" />
+        <item itemvalue="Django tests.Test: videogames_register.tests.VideogameFormViewTest.test_videogame_view_form" />
+        <item itemvalue="Django tests.Test: videogames_register.tests.VideogameListViewTest" />
+        <item itemvalue="Django tests.Test: videogames_register.tests.VideogameListViewTest.test_videogame_list_view" />
+        <item itemvalue="Django tests.Test: videogames_register.tests.VideogameFormTest.test_valid_form" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-js-predefined-1d06a55b98c1-74d2a5396914-JavaScript-PY-241.14494.241" />
+        <option value="bundled-python-sdk-0509580d9d50-28c9f5db9ffe-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-241.14494.241" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="543ec0da-1819-4fe5-bd90-e3ffdb92fc1d" name="Changes" comment="" />
+      <created>1730029466445</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1730029466445</updated>
+      <workItem from="1730029468681" duration="50672000" />
+      <workItem from="1730214289870" duration="5077000" />
+      <workItem from="1730221268320" duration="1802000" />
+      <workItem from="1730305426964" duration="20000" />
+      <workItem from="1730628011395" duration="308000" />
+      <workItem from="1730628910600" duration="6274000" />
+      <workItem from="1731092396599" duration="5276000" />
+    </task>
+    <task id="LOCAL-00001" summary="Added project files">
+      <option name="closed" value="true" />
+      <created>1730143203680</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1730143203681</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Removed comments from tests">
+      <option name="closed" value="true" />
+      <created>1730144480794</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1730144480794</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Files added">
+      <option name="closed" value="true" />
+      <created>1730635043721</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1730635043722</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="Added project files" />
+    <MESSAGE value="Removed comments from tests" />
+    <MESSAGE value="Files added" />
+    <option name="LAST_COMMIT_MESSAGE" value="Files added" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/Videogames_project$Test__videogames_register_tests.coverage" NAME="Test: videogames_register.tests Coverage Results" MODIFIED="1730634258328" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/Videogames_project$Test__videogames_register_tests_VideogameFormTest_test_invalid_form.coverage" NAME="Test: videogames_register.tests.VideogameFormTest.test_invalid_form Coverage Results" MODIFIED="1730630807632" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/Videogames_project$Test__videogames_register_tests_VideogameFormViewTest.coverage" NAME="Test: videogames_register.tests.VideogameFormViewTest Coverage Results" MODIFIED="1730634055616" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/Videogames_project$Test__videogames_register_tests_VideogameFormViewTest_test_videogame_view_form.coverage" NAME="Test: videogames_register.tests.VideogameFormViewTest.test_videogame_view_form Coverage Results" MODIFIED="1730633455990" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/Videogames_project$Test__videogames_register_tests_VideogameListViewTest.coverage" NAME="Test: videogames_register.tests.VideogameListViewTest Coverage Results" MODIFIED="1730632161453" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/Videogames_project$Test__videogames_register_tests_GenreModelTest.coverage" NAME="Test: videogames_register.tests.GenreModelTest Coverage Results" MODIFIED="1730630929214" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/Videogames_project$Test__videogames_register_tests_VideogameFormTest.coverage" NAME="Test: videogames_register.tests.VideogameFormTest Coverage Results" MODIFIED="1730630943247" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/Videogames_project$Test__videogames_register_tests_VideoGameModelTest_test_videogame_creation.coverage" NAME="Test: videogames_register.tests.VideoGameModelTest.test_videogame_creation Coverage Results" MODIFIED="1730629997469" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/Videogames_project$Test__videogames_register_tests_GenreModelTest_test_genre_creation.coverage" NAME="Test: videogames_register.tests.GenreModelTest.test_genre_creation Coverage Results" MODIFIED="1730630936267" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/Videogames_project$Test__videogames_register_tests_VideogameListViewTest_test_videogame_list_view.coverage" NAME="Test: videogames_register.tests.VideogameListViewTest.test_videogame_list_view Coverage Results" MODIFIED="1730632127319" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/Videogames_project$Test__videogames_register_tests_VideogameFormTest_test_valid_form.coverage" NAME="Test: videogames_register.tests.VideogameFormTest.test_valid_form Coverage Results" MODIFIED="1730630955693" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/Videogames_project$Test__videogames_register_tests_VideoGameModelTest.coverage" NAME="Test: videogames_register.tests.VideoGameModelTest Coverage Results" MODIFIED="1730630939724" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+  </component>
+</project>
