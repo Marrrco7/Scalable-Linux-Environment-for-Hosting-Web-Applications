@@ -11,6 +11,7 @@ from .forms import VideogameForm
 # Create your tests here.
 
 
+
 class GenreModelTest(TestCase):
     def setUp(self):
         self.genre = Genre.objects.create(title='Action')
