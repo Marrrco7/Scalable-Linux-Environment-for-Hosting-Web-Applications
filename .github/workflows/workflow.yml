@@ -1,12 +1,19 @@
-name: Git flow CI
+
+name: CI Workflow
 
 on:
-  push:
-    branches:
-      - develop
-      - main
-      - 'feature/*'
-      - 'release/*'
+  workflow_call:
+    inputs:
+      python-version:
+        required: true
+        type: string
+    secrets:
+      DB_USER:
+        required: true
+      DB_PASSWORD:
+        required: true
+      DB_NAME:
+        required: true
 
 jobs:
   build:
@@ -28,7 +35,7 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
-          python-version: '3.12'
+          python-version: ${{ inputs.python-version }}
 
       - name: Install dependencies
         run: |
@@ -56,22 +63,3 @@ jobs:
           DB_PORT: "5432"
         run: |
           python manage.py test --verbosity=2
-
-  release:
-    name: Set the Release Tag
-    if: github.ref == 'refs/heads/release/*'
-    needs: build
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-
-      - name: Create release tag
-        env:
-          GIT_TAG: "v$(date +'%Y.%m.%d.%H%M')"
-        run: |
-          git config --global user.name "github-actions[bot]"
-          git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git tag $GIT_TAG
-          git push origin $GIT_TAG
