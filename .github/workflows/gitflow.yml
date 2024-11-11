@@ -28,6 +28,8 @@ jobs:
           pip install -r requirements.txt
 
       - name: Run the tests with coverage
+        env:
+          DJANGO_SETTINGS_MODULE: "Videogames_project.settings"
         run: |
           coverage run -m pytest -v -s
 
