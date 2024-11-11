@@ -13,7 +13,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout code
+      - name: Checkout the code
         uses: actions/checkout@v4
 
       - name: Set up Python
@@ -21,13 +21,12 @@ jobs:
         with:
           python-version: '3.12'
 
-
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
-      - name: Run the tests with coverage
+      - name: Run Django Tests
         env:
           DJANGO_SETTINGS_MODULE: "Videogames_project.settings"
           DB_NAME: ${{ secrets.DB_NAME }}
@@ -35,13 +34,8 @@ jobs:
           DB_PASSWORD: ${{ secrets.DB_PASSWORD }}
           DB_HOST: ${{ secrets.DB_HOST }}
           DB_PORT: ${{ secrets.DB_PORT }}
-
         run: |
-          coverage run -m pytest -v -s
-
-      - name: Generate Coverage Report
-        run: |
-          coverage report -m
+          python manage.py test --verbosity=2
 
   release:
     name: Create Release Tag
