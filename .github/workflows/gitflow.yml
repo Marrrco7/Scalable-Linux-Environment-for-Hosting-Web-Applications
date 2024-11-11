@@ -13,7 +13,7 @@ jobs:
     runs-on: ubuntu-latest
     services:
       postgres:
-        image: postgres:17
+        image: postgres:13
         env:
           POSTGRES_USER: ${{ secrets.DB_USER }}
           POSTGRES_PASSWORD: ${{ secrets.DB_PASSWORD }}
@@ -22,7 +22,7 @@ jobs:
           - 5432:5432
 
     steps:
-      - name: Checkout the code
+      - name: Checkout code
         uses: actions/checkout@v4
 
       - name: Set up Python
@@ -35,7 +35,18 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
-      - name: Run Django Tests
+      - name: Run migrations
+        env:
+          DJANGO_SETTINGS_MODULE: "Videogames_project.settings"
+          DB_NAME: ${{ secrets.DB_NAME }}
+          DB_USER: ${{ secrets.DB_USER }}
+          DB_PASSWORD: ${{ secrets.DB_PASSWORD }}
+          DB_HOST: localhost
+          DB_PORT: "5432"
+        run: |
+          python manage.py migrate --noinput
+
+      - name: Run tests
         env:
           DJANGO_SETTINGS_MODULE: "Videogames_project.settings"
           DB_NAME: ${{ secrets.DB_NAME }}
@@ -53,10 +64,10 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout the code
+      - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Create the release tag
+      - name: Create release tag
         env:
           GIT_TAG: "v$(date +'%Y.%m.%d.%H%M')"
         run: |
