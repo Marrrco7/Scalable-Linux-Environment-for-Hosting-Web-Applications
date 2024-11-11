@@ -13,7 +13,7 @@ permissions:
 
 jobs:
   build:
-    uses: ./.github/workflows/ci-workflow.yml
+    uses: ./.github/workflows/workflow.yml
     with:
       python-version: '3.12'
     secrets:
