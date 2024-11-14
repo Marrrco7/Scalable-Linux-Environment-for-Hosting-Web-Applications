@@ -31,9 +31,20 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
+      - name: Install GitVersion
+        run: |
+          dotnet tool install --global GitVersion.Tool --version 5.*
+          export PATH="$PATH:/home/runner/.dotnet/tools"
+
+      - name: Generate a version
+        id: gitversion
+        run: |
+          export GITVERSION_FULLSEMVER=$(gitversion /showvariable FullSemVer)
+          echo "GIT_TAG=${GITVERSION_FULLSEMVER}" >> $GITHUB_ENV
+
       - name: Create release tag
         env:
-          GIT_TAG: "v$(date +'%Y.%m.%d.%H%M')"
+          GIT_TAG: ${{ env.GIT_TAG }}
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
