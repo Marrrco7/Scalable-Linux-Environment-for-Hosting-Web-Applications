@@ -1,3 +1,4 @@
+from django.db.models import Q
 from django.shortcuts import render, redirect, get_object_or_404
 from .forms import VideogameForm
 from .models import VideoGame
@@ -11,7 +12,17 @@ from django.contrib.auth.decorators import login_required, permission_required
 @login_required
 @permission_required ('videogames_register.view_videogame', raise_exception=True)
 def videogame_list(request):
-    context = {'videogame_list': VideoGame.objects.all()}
+    query = request.GET.get("query")
+    videogames = VideoGame.objects.all()
+
+    if query:
+        videogames = videogames.filter(
+            Q(title__icontains=query) |
+            Q(genre__title__icontains=query)
+        )
+
+
+    context = {'videogame_list': videogames, 'query': query}
     return render(request, "videogames_register/videogame_list.html", context)
 
 @login_required

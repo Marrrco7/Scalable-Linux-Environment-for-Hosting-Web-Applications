@@ -1,0 +1,52 @@
+name: Trunk CI
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    uses: ./.github/workflows/workflow.yml
+    with:
+      python-version: '3.12'
+    secrets:
+      DB_USER: ${{ secrets.DB_USER }}
+      DB_PASSWORD: ${{ secrets.DB_PASSWORD }}
+      DB_NAME: ${{ secrets.DB_NAME }}
+
+  release:
+    name: Create Release Tag
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    needs: build
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Install GitVersion
+        run: |
+          dotnet tool install --global GitVersion.Tool --version 5.*
+          export PATH="$PATH:/home/runner/.dotnet/tools"
+
+      - name: Generate a version
+        id: gitversion
+        run: |
+          export GITVERSION_FULLSEMVER=$(gitversion /showvariable FullSemVer)
+          echo "GIT_TAG=${GITVERSION_FULLSEMVER}" >> $GITHUB_ENV
+
+      - name: Create release tag
+        env:
+          GIT_TAG: ${{ env.GIT_TAG }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git tag $GIT_TAG
+          git push origin $GIT_TAG

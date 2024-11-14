@@ -12,6 +12,8 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 import os
 from pathlib import Path
 
+
+
 from django.contrib import staticfiles
 import environ
 
@@ -97,6 +99,7 @@ DATABASES = {
         'HOST': env('DB_HOST', default='localhost')
     }
 }
+
 
 # Password validation
 # https://docs.djangoproject.com/en/5.1/ref/settings/#auth-password-validators
