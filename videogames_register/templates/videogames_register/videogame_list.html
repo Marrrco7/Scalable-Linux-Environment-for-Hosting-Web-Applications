@@ -1,9 +1,9 @@
 {% extends "videogames_register/base.html" %}
 
 {% block content %}
-<div class="search-bar" style = "background-color: #ba2121">
+<div class="search-bar" style = "background-color: blueviolet">
     <form method="get" action="{% url 'videogame_list' %}">
-        <input type="text" name="query" placeholder="Search games..." class="form-control" value="{{ request.GET.query }}">
+        <input type="text" name="query" placeholder="Search games... enter game or genre" class="form-control" value="{{ request.GET.query }}">
         <button type="submit" class="btn btn-primary mt-2">Search</button>
     </form>
 </div>
