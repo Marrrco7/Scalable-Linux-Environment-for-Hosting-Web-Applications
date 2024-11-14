@@ -1,0 +1,41 @@
+name: Git Flow CI
+
+on:
+  push:
+    branches:
+      - develop
+      - main
+      - 'feature/*'
+      - 'release/*'
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    uses: ./.github/workflows/workflow.yml
+    with:
+      python-version: '3.12'
+    secrets:
+      DB_USER: ${{ secrets.DB_USER }}
+      DB_PASSWORD: ${{ secrets.DB_PASSWORD }}
+      DB_NAME: ${{ secrets.DB_NAME }}
+
+  release:
+    name: Create Release Tag
+    if: startsWith(github.ref, 'refs/heads/release/')
+    needs: build
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Create release tag
+        env:
+          GIT_TAG: "v$(date +'%Y.%m.%d.%H%M')"
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git tag $GIT_TAG
+          git push origin $GIT_TAG
