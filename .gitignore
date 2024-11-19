@@ -1,5 +1,5 @@
 
-credentials.venv/
+.venv/
 .idea/
 .vscode/
 __pycache__/
