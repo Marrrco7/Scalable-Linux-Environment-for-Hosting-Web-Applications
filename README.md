@@ -73,6 +73,9 @@ The architecture is composed by these following:
    - `release_date`: Date
    - `description`: String (100 chars)
    - `genre_id`: Foreign key pointing to  the `Genre` table
+
+  ![image](https://github.com/user-attachments/assets/518023ae-2e0e-4241-896a-583a16dc843c)
+
   
   
 - **Local Environment**: The application is running in a local server allowing staff members to access the WebApp by connecting to the IP address of the local machine.
