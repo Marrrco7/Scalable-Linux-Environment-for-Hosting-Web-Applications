@@ -32,7 +32,6 @@ plt.grid()
 plt.show()
 
 
-# test for normality
 shapiro_test = stats.shapiro(errors)
 ks_test = stats.kstest(errors, "norm", args=(mu, std))
 
