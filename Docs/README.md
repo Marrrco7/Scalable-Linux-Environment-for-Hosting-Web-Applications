@@ -4,7 +4,7 @@ Overview
 --------
 
 Dynamic web application developed using Django, allowing for easy addition, update, display, and deletion of game information. The application integrates with a PostgreSQL database to efficiently store and retrieve game data for a videogames company (Threading Labs).
-
+ 
 Table of Contents
 -----------------
 - [Project Structure](#project-structure)
@@ -73,6 +73,9 @@ The architecture is composed by these following:
    - `release_date`: Date
    - `description`: String (100 chars)
    - `genre_id`: Foreign key pointing to  the `Genre` table
+
+  ![image](https://github.com/user-attachments/assets/518023ae-2e0e-4241-896a-583a16dc843c)
+
   
   
 - **Local Environment**: The application is running in a local server allowing staff members to access the WebApp by connecting to the IP address of the local machine.

@@ -115,27 +115,3 @@ However, after that, it creates a release tag only if there is a push event dire
 
 ---
 
-## Collaboration
-
-To ensure smooth teamwork and efficient contributions, here is how the collaboration is structured for the project:
-
-- **Central Repository:**  
-  All code is stored in a single GitHub repository, serving as the source of truth.  
-  Contributors use branches to work independently without affecting production code.
-
-- **Branching and PRs:**  
-  Developers use feature branches to work on changes safely. Pull Requests (PRs) are reviewed and merged into develop id using Gitflow or directly into main.
-
-- **Code Reviews:**  
-  PRs are reviewed for quality, alignment with project goals, and functionality. Automated tests validate stability before merging.
-
-- **Documentation:**  
-  Contributors can refer also to:  
-
-  - `README.md` for more overview project details
-
-- **Automation:**  
-  GitHub Actions is responsible for automating the testing and deployment, saving time and reducing manual errors.
-
-- **Task Management:**  
-  Use GitHub Issues for tracking tasks and bugs. PR discussions can help for collaboration on the ongoing work.
