@@ -133,5 +133,5 @@ manual effort for backups is reduced and logical volumes also simplify the disk 
 
 ## Implementation Guide
 
-For the full implementation Guide see [Linux Environment Documentation PDF](./Docs/Linux Environment Documentation.pdf)
+For the full implementation Guide see [Linux Environment Documentation PDF](./docs/Linux Environment Documentation.pdf)
 
