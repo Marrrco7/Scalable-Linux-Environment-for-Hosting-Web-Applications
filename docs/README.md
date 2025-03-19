@@ -46,7 +46,7 @@ environment.
 
 - **Role in the architecture**:
 It is in charge of providing the Linux environment, Ubuntu LTS, to run all the components
-safely and efficiently. It ensures that the system is independent from other environments, so
+safely and efficiently. It ensures that the system is independent of other environments, so
 external interference is minimized. It allocates the CPU, memory and disk resources to
 provide consistent performance for the rest of the components, and also gives easiness to a
 future migration to a cloud platform without significant amounts of reconfiguration.
