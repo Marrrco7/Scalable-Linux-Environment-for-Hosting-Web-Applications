@@ -1,7 +1,7 @@
 Overview
 --------
 
-An end-to-end DevOps solution designed to deploy a Django web application securely and efficiently, integrating technologies such as Django (with CRUD operations, authentication, and permissions) [Django Web Appliation](README.md), PostgreSQL database management, Nginx as a reverse proxy web server, Gunicorn application server, UFW firewall for network security, Ubuntu LTS on a Linux virtual machine for isolated deployment, Logical Volume Management (LVM) for scalable storage, automated backups for disaster recovery, Netdata for real-time monitoring, and automated CI/CD pipelines built with GitHub Actions, with a customized GitHub Workflow, see [GitHub Workflow](Git_Strategies.md) supporting GitFlow and trunk-based strategies.
+An end-to-end DevOps solution designed to deploy a Django web application securely and efficiently, integrating technologies such as Django (with CRUD operations, authentication, and permissions) [Django Web Appliation](DJANGO-WEBAPP.md), PostgreSQL database management, Nginx as a reverse proxy web server, Gunicorn application server, UFW firewall for network security, Ubuntu LTS on a Linux virtual machine for isolated deployment, Logical Volume Management (LVM) for scalable storage, automated backups for disaster recovery, Netdata for real-time monitoring, and automated CI/CD pipelines built with GitHub Actions, with a customized GitHub Workflow, see [GitHub Workflow](Git_Strategies.md) supporting GitFlow and trunk-based strategies.
 
 
 Table of Contents
@@ -38,11 +38,18 @@ Components
 
 ### 1. Virtual Machine
 
-- **Purpose**:  
-  The virtual machine is the base of the infrastructure. It provides an isolated and secure environment to host the web application, database, and supporting tools. It ensures efficiency in resource management, scalability, and reliability for the production environment.
+- **Purpose**:
+The virtual machine is the base of the infrastructure. It provides an isolated and secure
+environment to host the web application, database and the other supporting tools. It
+ensures efficiency in the resource management, scalability, and reliability for the production
+environment.
 
-- **Role in the architecture**:  
-  Hosts the Linux environment (Ubuntu LTS) required to safely run all project components. It guarantees system independence, minimizing external interference, and ensures consistent performance. This setup also simplifies future migration to cloud platforms.
+- **Role in the architecture**:
+It is in charge of providing the Linux environment, Ubuntu LTS, to run all the components
+safely and efficiently. It ensures that the system is independent from other environments, so
+external interference is minimized. It allocates the CPU, memory and disk resources to
+provide consistent performance for the rest of the components, and also gives easiness to a
+future migration to a cloud platform without significant amounts of reconfiguration.
 
 ### 2. Nginx Web Server
 
@@ -50,7 +57,7 @@ Components
   Lightweight, high-performance web server and reverse proxy responsible for handling incoming HTTP/HTTPS requests and routing them to the Django application.
 
 - **Role in the architecture**:  
-  Acts as a reverse proxy, forwarding client requests to the Django application, serving static files, and securing connections by enabling TLS encryption, protecting user requests against interception or modification.
+  Acts as a reverse proxy, forwarding client requests to the Django application, serving static files, and securing connections by enabling TLS encryption, protecting user requests against interception or modification by encrypting the traffic.
 
 ### 3. Django Web Application
 
@@ -58,7 +65,7 @@ Components
   The Django web application is the core of the project, responsible for providing CRUD management functionalities for the videogames catalog.
 
 - **Role in the architecture**:  
-  Handles user interactions, manages business logic, and communicates with the PostgreSQL database to retrieve and store data. It runs on a dedicated logical volume (`django_volume`) for improved isolation and simplified storage management.
+  Handles user interactions as well as business logic, and communicates with the PostgreSQ database to retrieve the stored data, it runs on a dedicated django_volume for isolation and  better storage management.
 
 ### 4. PostgreSQL Database
 
@@ -66,20 +73,20 @@ Components
   Stores all the videogame data managed by the web application.
 
 - **Role in the architecture**:  
-  Manages and stores videogame data such as titles, genres, release dates, and descriptions. It utilizes a dedicated logical volume (`pg_volume`) to separate data storage from other system files, improving security and performance.
+  Manages and stores videogame data such as titles, genres, release dates, and descriptions. It utilizes a dedicated logical volume volume to separate data storage from other system files, improving security and performance.
 
 ### 5. Automated Backups
 
 - **Purpose**:  
-  Ensures data integrity and allows quick recovery in the event of system failure or disasters.
+  Automated backups are meant to ensure data integrity and recovery in case of disasters
 
 - **Role in the architecture**:  
-  Automatically performs regular backups of the PostgreSQL database and critical application files, storing these backups in a dedicated logical volume (`backup_volume`) to minimize downtime in case of data loss.
+  Automatically performs regular backups of the PostgreSQL database and critical application files, storing these backups in a dedicated logical volume to minimize downtime in case of data loss.
 
 ### 6. Monitoring (Netdata)
 
 - **Purpose**:  
-  Tracks real-time system performance metrics such as memory usage, CPU load, and disk space utilization.
+  Tracks system performance metrics such as memory usage, CPU load, and disk space.
 
 - **Role in the architecture**:  
   Detects potential issues like high resource usage early and alerts administrators, enabling proactive management to ensure ongoing system stability.
@@ -87,10 +94,11 @@ Components
 ### 7. UFW Firewall
 
 - **Purpose**:  
-  Secures the virtual machine by controlling incoming and outgoing network traffic.
+  The Uncomplicated Firewall Network is used to secure the virtual machine by controlling the incoming and outgoing network traffic.
+
 
 - **Role in the architecture**:  
-  Ensures only essential network ports (SSH, HTTP, HTTPS) are accessible, preventing unauthorized access and protecting the application from external threats.
+  Ensures only essential network ports SSH, HTTP are accessible, preventing unauthorized access and protecting the application from external threats.
 
 ### 8. Logical Volume Management (LVM)
 
@@ -133,5 +141,5 @@ manual effort for backups is reduced and logical volumes also simplify the disk 
 
 ## Implementation Guide
 
-For the full implementation Guide see [Linux Environment Documentation PDF](Linux Environment Documentation.pdf)
+For the full implementation Guide see [Linux Environment Documentation PDF](Linux.pdf)
 
