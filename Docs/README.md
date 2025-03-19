@@ -31,7 +31,7 @@ Table of Contents
 
 ### System Architecture
 
-![img.png](img.png)![image](https://github.com/user-attachments/assets/9d3de266-75fe-41f7-a89f-6c847b73d8c6)
+![img.png](img.png)
 
 Components
 ----------
@@ -133,5 +133,5 @@ manual effort for backups is reduced and logical volumes also simplify the disk 
 
 ## Implementation Guide
 
-For the full implementation Guide see [Linux Environment Documentation PDF](./docs/Linux Environment Documentation.pdf)
+For the full implementation Guide see [Linux Environment Documentation PDF](./Docs/Linux Environment Documentation.pdf)
 
