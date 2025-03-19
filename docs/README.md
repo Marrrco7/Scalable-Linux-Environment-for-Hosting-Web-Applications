@@ -1,7 +1,7 @@
 Overview
 --------
 
-An end-to-end DevOps solution designed to deploy a Django web application securely and efficiently, integrating technologies such as Django (with CRUD operations, authentication, and permissions) [Django Web Appliation](./docs/README.md), PostgreSQL database management, Nginx as a reverse proxy web server, Gunicorn application server, UFW firewall for network security, Ubuntu LTS on a Linux virtual machine for isolated deployment, Logical Volume Management (LVM) for scalable storage, automated backups for disaster recovery, Netdata for real-time monitoring, and automated CI/CD pipelines built with GitHub Actions, with a customized GitHub Workflow, see [GitHub Workflow](./docs/Git_Strategies.md) supporting GitFlow and trunk-based strategies.
+An end-to-end DevOps solution designed to deploy a Django web application securely and efficiently, integrating technologies such as Django (with CRUD operations, authentication, and permissions) [Django Web Appliation](docs/README.md), PostgreSQL database management, Nginx as a reverse proxy web server, Gunicorn application server, UFW firewall for network security, Ubuntu LTS on a Linux virtual machine for isolated deployment, Logical Volume Management (LVM) for scalable storage, automated backups for disaster recovery, Netdata for real-time monitoring, and automated CI/CD pipelines built with GitHub Actions, with a customized GitHub Workflow, see [GitHub Workflow](Git_Strategies.md) supporting GitFlow and trunk-based strategies.
 
 
 Table of Contents
