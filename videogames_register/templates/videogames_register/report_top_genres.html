@@ -1,0 +1,20 @@
+{% extends "videogames_register/base.html" %}
+{% block content %}
+<h2>Top 5 Genres by Game Count</h2>
+<table>
+    <thead>
+        <tr>
+            <th>Genre</th>
+            <th>Number of Games</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for row in data %}
+        <tr>
+            <td>{{ row.genre__title }}</td>
+            <td>{{ row.game_count }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

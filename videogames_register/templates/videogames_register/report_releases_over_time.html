@@ -1,0 +1,20 @@
+{% extends "videogames_register/base.html" %}
+{% block content %}
+<h2>Releases Over Time</h2>
+<table>
+    <thead>
+        <tr>
+            <th>Year</th>
+            <th>Number of Games Released</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for row in data %}
+        <tr>
+            <td>{{ row.year }}</td>
+            <td>{{ row.release_count }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

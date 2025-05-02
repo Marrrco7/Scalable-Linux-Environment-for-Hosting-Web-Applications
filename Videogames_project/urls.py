@@ -17,10 +17,22 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from django.contrib.auth import views as auth_views
+from django.shortcuts import render
+
+from videogames_register.models import VideoGame
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('videogame/',include('videogames_register.urls')),
     path('accounts/login/', auth_views.LoginView.as_view(template_name='registration/login.html'), name='login'),
     path('accounts/logout/', auth_views.LogoutView.as_view(), name='logout'),
+    path('test/', lambda request: render(request, 'videogames_register/videogame_list.html')),
+
+
 ]
+
+def test_view(request):
+    return render(request, 'videogames_register/videogame_list.html', {
+        'videogame_list': VideoGame.objects.all()
+    })
+
