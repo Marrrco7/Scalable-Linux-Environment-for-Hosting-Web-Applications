@@ -1,4 +1,5 @@
-from django.db.models import Q
+from django.db.models import Q, Count
+from django.db.models.functions import ExtractYear
 from django.shortcuts import render, redirect, get_object_or_404
 from .forms import VideogameForm
 from .models import VideoGame
@@ -7,7 +8,6 @@ from django.shortcuts import redirect
 from django.contrib.auth.decorators import login_required, permission_required
 
 
-# Create your views here.
 
 @login_required
 @permission_required ('videogames_register.view_videogame', raise_exception=True)
@@ -53,3 +53,25 @@ def videogame_delete(request,id):
     return redirect('/videogame/list')
 
 
+def report_top_genres(request):
+    data = (
+        VideoGame.objects
+        .values('genre__title')
+        .annotate(game_count = Count('id'))
+        .order_by('-game_count')[:5]
+    )
+
+    return render(request, "videogames_register/report_top_genres.html", {'data':data})
+
+
+def report_releases_over_time(request):
+    data = (
+        VideoGame.objects
+        .annotate(year=ExtractYear('release_date'))
+        .values('year')
+        .annotate(release_count=Count('id'))
+        .order_by('year')
+    )
+    return render(request, "videogames_register/report_releases_over_time.html", {
+        'data': data
+    })
