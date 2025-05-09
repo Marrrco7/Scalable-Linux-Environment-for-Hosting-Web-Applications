@@ -1,5 +1,5 @@
 from django.db import models
-
+from django.contrib.auth.models import User
 
 class Genre(models.Model):
     title = models.CharField(max_length=50)
@@ -13,3 +13,4 @@ class VideoGame(models.Model):
     release_date = models.DateField()
     description = models.CharField(max_length=100)
     genre = models.ForeignKey(Genre, on_delete=models.CASCADE)
+
