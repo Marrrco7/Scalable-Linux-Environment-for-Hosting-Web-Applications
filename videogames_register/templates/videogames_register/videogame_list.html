@@ -1,49 +1,52 @@
 {% extends "videogames_register/base.html" %}
 
 {% block content %}
-<div class="search-bar" style = "background-color: blueviolet">
+<div class="mb-4">
     <form method="get" action="{% url 'videogame_list' %}">
-        <input type="text" name="query" placeholder="Search games... enter game or genre" class="form-control" value="{{ request.GET.query }}">
-        <button type="submit" class="btn btn-primary mt-2">Search</button>
+        <div class="input-group">
+            <input type="text" name="query" placeholder="Search by title or genre..." class="form-control" value="{{ request.GET.query }}">
+            <div class="input-group-append">
+                <button class="btn btn-outline-light" type="submit">
+                    <i class="fas fa-search"></i> Search
+                </button>
+            </div>
+        </div>
     </form>
 </div>
 
+<div class="mb-3">
+    <a href="{% url 'videogame_insert' %}" class="btn btn-success">
+        <i class="fas fa-plus-circle"></i> Add New Game
+    </a>
+</div>
 
-<table class="table table-borderless">
-    <thead class="border-bottom font-weight-bold">
-        <tr>
-            <td>Title</td>
-            <td>Release Date</td>
-            <td>Genre</td>
-            <td>Description</td>
-            <td>
-                <a href="{% url 'videogame_insert' %}" class="btn btn-outline-success">
-                    <i class="fa-solid fa-gamepad"></i> Add New
+<div class="row">
+    {% for game in videogame_list %}
+    <div class="col-md-6 col-lg-4 mb-4">
+        <div class="card h-100 bg-transparent border-light">
+            <div class="card-body" style="color: #dddddd;">
+                <h5 class="card-title">{{ game.title }}</h5>
+                <h6 class="card-subtitle mb-2">{{ game.genre }}</h6>
+                <p class="card-text">{{ game.description }}</p>
+                <small>Released: {{ game.release_date }}</small>
+            </div>
+            <div class="card-footer border-top-0 d-flex justify-content-between">
+                <a href="{% url 'videogame_update' game.id %}" class="btn btn-sm btn-outline-primary">
+                    <i class="fas fa-edit"></i> Edit
                 </a>
-            </td>
-        </tr>
-    </thead>
-    <tbody>
-        {% for videogame in videogame_list %}
-            <tr>
-                <td>{{videogame.title}}</td>
-                <td>{{videogame.release_date}}</td>
-                <td>{{videogame.genre}}</td>
-                <td>{{videogame.description}}</td>
-                <td>
-                    <a href="{% url 'videogame_update' videogame.id %}" class="btn text-secondary px-0">
-                        <i class="fa-solid fa-pencil"></i>
-                    </a>
-                    <form action="{% url 'videogame_delete' videogame.id %}" method="post" class="d-inline">
-                        {% csrf_token %}
-                        <button type="submit" class="btn">
-                            <i class="fa-solid fa-trash"></i>
-                        </button>
-                    </form>
-                </td>
-            </tr>
-        {% endfor %}
-    </tbody>
-</table>
-
-{% endblock content %}
+                <form method="post" action="{% url 'videogame_delete' game.id %}">
+                    {% csrf_token %}
+                    <button type="submit" class="btn btn-sm btn-outline-danger">
+                        <i class="fas fa-trash"></i> Delete
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+    {% empty %}
+    <div class="col-12 text-center text-muted mt-4">
+        No games found.
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

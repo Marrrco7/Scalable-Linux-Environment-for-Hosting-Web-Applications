@@ -1,32 +1,38 @@
-
 {% extends "videogames_register/base.html" %}
 {% load crispy_forms_tags %}
 
-
 {% block content %}
-<form action="" method="post" autocomplete="off">
-    {% csrf_token %}
-    {{form.title|as_crispy_field}}
-    {{form.release_date|as_crispy_field}}
-    <div class="row">
-        <div class="col-md-4">
-            {{form.description|as_crispy_field}}
-        </div>
-        <div class="col-md-8">
-            {{form.genre|as_crispy_field}}
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-md-8">
-            <button type="submit" class="btn btn-success btn-block btn-lg"><i class="fa-solid fa-arrow-right"></i>
-                Submit</button>
-        </div>
-        <div class="col-md-4">
-            <a href="{% url 'videogame_list' %}" class="btn btn-secondary btn-block btn-lg">
-                <i class="fa-solid fa-arrow-left"></i> Back to list
-            </a>
-        </div>
-    </div>
+<div class="row justify-content-center">
+    <div class="col-md-8">
+        <div class="card shadow-sm">
+            <div class="card-header bg-transparent">
+                <h4 class="mb-0">
+                    {% if form.instance.pk %}
+                        <i class="fas fa-edit"></i> Update Game
+                    {% else %}
+                        <i class="fas fa-plus"></i> Add New Game
+                    {% endif %}
+                </h4>
+            </div>
+            <div class="card-body">
+                <form method="post" autocomplete="off">
+                    {% csrf_token %}
+                    {{ form.title|as_crispy_field }}
+                    {{ form.release_date|as_crispy_field }}
+                    {{ form.description|as_crispy_field }}
+                    {{ form.genre|as_crispy_field }}
 
-</form>
-{% endblock content %}
+                    <div class="d-flex justify-content-between mt-4">
+                        <a href="{% url 'videogame_list' %}" class="btn btn-secondary">
+                            <i class="fas fa-arrow-left"></i> Back
+                        </a>
+                        <button type="submit" class="btn btn-success">
+                            <i class="fas fa-check-circle"></i> Save
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

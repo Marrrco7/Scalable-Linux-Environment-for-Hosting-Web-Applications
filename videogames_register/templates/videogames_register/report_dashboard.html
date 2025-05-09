@@ -1,0 +1,21 @@
+{% extends "videogames_register/base.html" %}
+{% block content %}
+<div class="container mt-5">
+    <h2 class="text-center mb-4">Reporting Dashboard</h2>
+    <div class="list-group">
+
+        <a href="{% url 'report_top_genres' %}" class="list-group-item list-group-item-action">
+            Top 5 Genres by Game Count
+        </a>
+
+        <a href="{% url 'report_releases_over_time' %}" class="list-group-item list-group-item-action">
+            Games Released Per Year
+        </a>
+
+        <a href="{% url 'report_cumulative' %}" class="list-group-item list-group-item-action">
+            Cumulative Releases Over Time
+        </a>
+
+    </div>
+</div>
+{% endblock %}

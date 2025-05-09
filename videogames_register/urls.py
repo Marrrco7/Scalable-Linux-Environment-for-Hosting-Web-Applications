@@ -11,4 +11,9 @@ urlpatterns = [
 
     path('reports/releases-over-time/', views.report_releases_over_time, name='report_releases_over_time'),
 
+    path('reports/cumulative/', views.report_cumulative_releases, name='report_cumulative'),
+
+    path('reports/', views.report_dashboard, name='report_dashboard'),
+
+
 ]

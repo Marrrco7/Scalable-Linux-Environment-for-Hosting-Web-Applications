@@ -1,0 +1,22 @@
+{% extends "videogames_register/base.html" %}
+{% block content %}
+<h2 style="color: #dddddd;">Cumulative Game Releases</h2>
+<table class="table table-hover" style="color: #dddddd;">
+    <thead>
+        <tr>
+            <th>Year</th>
+            <th>Games This Year</th>
+            <th>Cumulative Total</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for row in data %}
+        <tr>
+            <td>{{ row.year }}</td>
+            <td>{{ row.games_this_year }}</td>
+            <td>{{ row.cumulative_total }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

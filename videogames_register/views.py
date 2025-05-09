@@ -6,6 +6,7 @@ from .models import VideoGame
 from django.contrib.auth import logout
 from django.shortcuts import redirect
 from django.contrib.auth.decorators import login_required, permission_required
+from django.db import connection
 
 
 
@@ -75,3 +76,27 @@ def report_releases_over_time(request):
     return render(request, "videogames_register/report_releases_over_time.html", {
         'data': data
     })
+
+
+def report_cumulative_releases(request):
+    with connection.cursor() as cursor:
+        cursor.execute("""
+            SELECT year, games_this_year, cumulative_total 
+            FROM analytics.cumulative_releases 
+            ORDER BY year;  
+        """)
+        rows = cursor.fetchall()
+
+    data = [
+        {"year": row[0], "games_this_year": row[1], "cumulative_total": row[2]}
+        for row in rows
+    ]
+    return render(request, "videogames_register/report_cumulative_releases.html", {
+        "data": data
+    })
+
+
+from django.shortcuts import render
+
+def report_dashboard(request):
+    return render(request, "videogames_register/report_dashboard.html")
