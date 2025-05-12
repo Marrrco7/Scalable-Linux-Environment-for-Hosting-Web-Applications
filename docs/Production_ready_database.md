@@ -9,6 +9,7 @@ To support business intelligence and reporting, analytics-ready materialized vie
 An automated backup and restore mechanism was established, with backups scheduled via Windows Task Scheduler. Restore validation is performed in an isolated Docker container to confirm the integrity and completeness of backup files without affecting the production system.
 
 This work not only improves data security and visibility but also supports analytics through a reporting module and ensures a resilient backup strategy. 
+
 Table of Contents
 -----------------
 - [Architecture](#architecture)
