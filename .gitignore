@@ -7,5 +7,8 @@ __pycache__/
 
 # Ignore the credentials (for obvious reasons)
 credentials.env
+backup.env
+backup.log
+backup.bat
 videogames_register/migrations/__pycache__/
 Videogames_project/__pycache__/

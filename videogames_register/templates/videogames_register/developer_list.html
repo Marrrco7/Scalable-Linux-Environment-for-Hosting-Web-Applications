@@ -1,0 +1,21 @@
+{% extends "videogames_register/base.html" %}
+{% block content %}
+<h3>All Developers</h3>
+<a href="{% url 'developer_add' %}" class="btn btn-primary mb-3">Add Developer</a>
+<table class="table table-hover table-dark">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Founded Year</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for dev in developers %}
+        <tr>
+            <td>{{ dev.name }}</td>
+            <td>{{ dev.founded_year }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

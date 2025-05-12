@@ -1,0 +1,23 @@
+{% extends "videogames_register/base.html" %}
+{% block content %}
+<h3>Game Copies</h3>
+<a href="{% url 'copy_add' %}" class="btn btn-primary mb-3">Add Copy</a>
+<table class="table table-hover table-dark">
+    <thead>
+        <tr>
+            <th>Game</th>
+            <th>Serial Number</th>
+            <th>Condition</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for copy in copies %}
+        <tr>
+            <td>{{ copy.game }}</td>
+            <td>{{ copy.serial_number }}</td>
+            <td>{{ copy.condition }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

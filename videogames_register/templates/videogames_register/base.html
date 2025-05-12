@@ -75,12 +75,16 @@
 </head>
 <body>
 
-<nav class="navbar navbar-expand-lg navbar-dark">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <a class="navbar-brand" href="/">ThreadingLabs</a>
     <div class="collapse navbar-collapse">
         <ul class="navbar-nav mr-auto">
-            <li class="nav-item"><a class="nav-link" href="/videogame/list/"><i class="fas fa-gamepad"></i> Games</a></li>
-            <li class="nav-item"><a class="nav-link" href="/videogame/reports/"><i class="fas fa-chart-bar"></i> Reports</a></li>
+            <li class="nav-item"><a class="nav-link" href="{% url 'videogame_list' %}"><i class="fas fa-gamepad"></i> Games</a></li>
+            <li class="nav-item"><a class="nav-link" href="{% url 'report_dashboard' %}"><i class="fas fa-chart-bar"></i> Reports</a></li>
+            <li class="nav-item"><a class="nav-link" href="{% url 'developer_list' %}"><i class="fas fa-code"></i> Developers</a></li>
+            <li class="nav-item"><a class="nav-link" href="{% url 'review_list' %}"><i class="fas fa-star"></i> Reviews</a></li>
+            <li class="nav-item"><a class="nav-link" href="{% url 'userprofile_list' %}"><i class="fas fa-user"></i> Users</a></li>
+            <li class="nav-item"><a class="nav-link" href="{% url 'copy_list' %}"><i class="fas fa-clone"></i> Copies</a></li>
         </ul>
     </div>
 </nav>

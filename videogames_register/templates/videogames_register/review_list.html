@@ -1,0 +1,30 @@
+{% extends "videogames_register/base.html" %}
+{% block content %}
+
+<h3>All Reviews</h3>
+
+<a href="{% url 'review_add' %}" class="btn btn-primary mb-3">Add Review</a>
+
+
+<table class="table table-hover table-dark">
+    <thead>
+        <tr>
+            <th>User</th>
+            <th>Game</th>
+            <th>Rating</th>
+            <th>Comment</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for review in reviews %}
+        <tr>
+            <td>{{ review.user }}</td>
+            <td>{{ review.game }}</td>
+            <td>{{ review.rating }}</td>
+            <td>{{ review.comment }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+{% endblock %}

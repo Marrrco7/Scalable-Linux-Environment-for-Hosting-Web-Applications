@@ -1,0 +1,12 @@
+{% extends "videogames_register/base.html" %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+<h3>Add Developer</h3>
+<form method="post">
+    {% csrf_token %}
+    {{ form|crispy }}
+    <button type="submit" class="btn btn-success">Submit</button>
+    <a href="/developer/list" class="btn btn-secondary">Back</a>
+</form>
+{% endblock %}

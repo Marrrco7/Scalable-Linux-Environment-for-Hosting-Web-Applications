@@ -1,0 +1,11 @@
+{% extends "videogames_register/base.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+<h3>Add User Profile</h3>
+<form method="post">
+    {% csrf_token %}
+    {{ form|crispy }}
+    <button type="submit" class="btn btn-success">Submit</button>
+    <a href="/userprofile/list" class="btn btn-secondary">Back</a>
+</form>
+{% endblock %}

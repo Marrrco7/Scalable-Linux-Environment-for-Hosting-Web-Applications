@@ -1,0 +1,23 @@
+{% extends "videogames_register/base.html" %}
+{% block content %}
+<h3>User Profiles</h3>
+<a href="{% url 'userprofile_add' %}" class="btn btn-primary mb-3">Add Profile</a>
+<table class="table table-hover table-dark">
+    <thead>
+        <tr>
+            <th>User</th>
+            <th>Country</th>
+            <th>Age</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for profile in profiles %}
+        <tr>
+            <td>{{ profile.user }}</td>
+            <td>{{ profile.country }}</td>
+            <td>{{ profile.age }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}
