@@ -116,6 +116,8 @@ def copy_form(request):
 
 
 #REPORTING
+
+
 def report_top_genres(request):
     data = (
         VideoGame.objects

@@ -1,62 +1,52 @@
-
 CREATE SCHEMA audit;
 CREATE SCHEMA analytics;
 
-
-CREATE ROLE app_reader NOINHERIT;
-CREATE ROLE app_writer NOINHERIT;
-CREATE ROLE auditor NOINHERIT;
+CREATE ROLE app_reader  NOINHERIT;
+CREATE ROLE app_writer  NOINHERIT;
+CREATE ROLE auditor     NOINHERIT;
 CREATE ROLE report_user NOINHERIT;
 CREATE ROLE backup_role NOINHERIT;
 
-
-
-GRANT SELECT ON ALL TABLES IN SCHEMA public TO app_reader;
-GRANT SELECT, INSERT, UPDATE, DELETE ON ALL TABLES IN SCHEMA public TO app_writer;
-GRANT SELECT ON ALL TABLES IN SCHEMA audit TO auditor;
-GRANT SELECT ON ALL TABLES IN SCHEMA analytics TO report_user;
-GRANT CONNECT ON DATABASE videogames_db TO backup_role;
-GRANT USAGE ON SCHEMA public, audit, analytics TO backup_role;
-GRANT SELECT ON ALL TABLES IN SCHEMA public, audit, analytics TO backup_role;
-GRANT SELECT ON ALL SEQUENCES IN SCHEMA public, audit, analytics TO backup_role;
-
-
-
-
-ALTER DEFAULT PRIVILEGES IN SCHEMA public, audit, analytics
-GRANT SELECT ON TABLES TO backup_role;
-ALTER DEFAULT PRIVILEGES IN SCHEMA public, audit, analytics
-GRANT SELECT ON SEQUENCES TO backup_role;
 ALTER ROLE backup_user CREATEDB;
 
---------------
+GRANT SELECT ON ALL TABLES IN SCHEMA public TO app_reader;
+GRANT SELECT,INSERT,UPDATE,DELETE ON ALL TABLES IN SCHEMA public TO app_writer;
+GRANT SELECT ON ALL TABLES IN SCHEMA audit TO auditor;
+GRANT SELECT ON ALL TABLES IN SCHEMA analytics TO report_user;
 
-GRANT USAGE ON SCHEMA audit TO app_writer;
+GRANT CONNECT ON DATABASE videogames_db TO backup_role;
+GRANT USAGE ON SCHEMA public,audit,analytics TO backup_role;
+GRANT SELECT ON ALL TABLES IN SCHEMA public,audit,analytics TO backup_role;
+GRANT SELECT ON ALL SEQUENCES IN SCHEMA public,audit,analytics TO backup_role;
+
+ALTER DEFAULT PRIVILEGES IN SCHEMA public,audit,analytics
+  GRANT SELECT ON TABLES    TO backup_role;
+ALTER DEFAULT PRIVILEGES IN SCHEMA public,audit,analytics
+  GRANT SELECT ON SEQUENCES TO backup_role;
+
+GRANT USAGE ON SCHEMA audit      TO app_writer;
 GRANT INSERT ON audit.audit_log TO app_writer;
-GRANT USAGE, SELECT ON SEQUENCE audit.audit_log_id_seq TO app_writer;
+GRANT USAGE,SELECT ON SEQUENCE   audit.audit_log_id_seq TO app_writer;
 
-
-
-CREATE USER game_reader WITH PASSWORD 'readerpass';
-CREATE USER game_writer WITH PASSWORD 'writerpass';
-CREATE USER audit_user WITH PASSWORD 'auditpass';
+CREATE USER game_reader     WITH PASSWORD 'readerpass';
+CREATE USER game_writer     WITH PASSWORD 'writerpass';
+CREATE USER audit_user      WITH PASSWORD 'auditpass';
 CREATE USER report_user_app WITH PASSWORD 'reportpass';
-CREATE USER backup_user WITH PASSWORD 'backuppass';
+CREATE USER backup_user     WITH PASSWORD 'backuppass';
 
-
-
-
-GRANT app_reader TO game_reader;
-GRANT app_writer TO game_writer;
-GRANT auditor TO audit_user;
+GRANT app_reader  TO game_reader;
+GRANT app_writer  TO game_writer;
+GRANT auditor     TO audit_user;
 GRANT report_user TO report_user_app;
 GRANT backup_role TO backup_user;
 
+ALTER DEFAULT PRIVILEGES IN SCHEMA public GRANT SELECT,INSERT,UPDATE,DELETE ON TABLES TO app_writer;
 
-ALTER DEFAULT PRIVILEGES IN SCHEMA public
-GRANT SELECT, INSERT, UPDATE, DELETE ON TABLES TO app_writer;
-
-
+GRANT USAGE ON SCHEMA public                   TO report_user;
+GRANT SELECT ON TABLE public.django_session    TO report_user;
+GRANT SELECT ON TABLE public.auth_user         TO report_user;
+GRANT SELECT ON TABLE public.django_content_type TO report_user;
+GRANT SELECT ON TABLE public.auth_permission   TO report_user;
 
 -------------------------------------------------------------------------------
 
@@ -187,6 +177,7 @@ WHERE rank_in_genre <= 5;
 GRANT SELECT ON analytics.top_reviewed_games_per_genre TO report_user;
 
 
+
 CREATE MATERIALIZED VIEW analytics.avg_rating_per_game AS
 SELECT
   vg.id           AS game_id,
@@ -271,6 +262,8 @@ ON public.videogames_register_videogame
 USING GIN(to_tsvector('english', description));
 
 
+
+
 SELECT * FROM videogames_register_developer WHERE videogames_register_developer.id IS NULL;
 
 --------------------------------------------------------
@@ -285,15 +278,6 @@ JOIN public.videogames_register_review r ON u.id = r.user_id
 GROUP BY u.username
 HAVING COUNT(DISTINCT r.game_id) > 3;
 
-
-
-SELECT
-    u.username,
-    COUNT(DISTINCT r.game_id) AS reviewed_games
-FROM public.auth_user u
-JOIN public.videogames_register_review r ON u.id = r.user_id
-GROUP BY u.username
-HAVING COUNT(DISTINCT r.game_id) > 3;
 
 
 SELECT
