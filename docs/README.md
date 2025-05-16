@@ -4,6 +4,8 @@ Overview
 An end-to-end DevOps solution designed to deploy a Django web application securely and efficiently, integrating technologies such as Django with (for a web app with authentication and permissions), see [Django Web Appliation](DJANGO-WEBAPP.md), PostgreSQL database management, Nginx as a reverse proxy web server, Gunicorn application server, UFW firewall for network security, Ubuntu LTS on a Linux virtual machine for isolated deployment, Logical Volume Management (LVM) for scalable storage, automated backups for disaster recovery, Netdata for real-time monitoring, and a customized and automated CI workflow built with GitHub Actions, see [GitHub Workflow](Git_Strategies.md) for a detailed explanation of the workflow supporting GitFlow and trunk-based strategies.
 
 
+## For the full documentation and implementation Guide see [Linux Environment Documentation PDF](Linux.pdf)
+
 Table of Contents
 -----------------
 - [Project Structure](#project-structure)
@@ -12,7 +14,7 @@ Table of Contents
 - [System Architecture](#system-architecture)
 - [How The Components Work Together](#security)
 - [Reason of the Chosen Architecture](#testing)
-- [Implementation Guide](#setup-and-deployment-steps)
+
 
 ## Project Structure
 -----------------
@@ -139,7 +141,5 @@ manual effort for backups is reduced and logical volumes also simplify the disk 
 
 
 
-## Implementation Guide
 
-For the full implementation Guide see [Linux Environment Documentation PDF](Linux.pdf)
 
