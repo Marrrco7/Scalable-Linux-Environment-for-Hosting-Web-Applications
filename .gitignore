@@ -10,5 +10,8 @@ credentials.env
 backup.env
 backup.log
 backup.bat
+
+# Database dumps contain user data and password hashes
+backups/
 videogames_register/migrations/__pycache__/
 Videogames_project/__pycache__/
